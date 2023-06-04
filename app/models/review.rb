@@ -1,5 +1,4 @@
 class Review < ApplicationRecord
   belongs_to :user
-  
-  has_many :books, through: :bookreview
+  belongs_to :book
 end
