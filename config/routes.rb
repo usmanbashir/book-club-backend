@@ -1,20 +1,30 @@
 Rails.application.routes.draw do
+
+  # devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
+  
+  get '/current_user', to: 'current_user#index'
 
-  get "users", to: "users#index"
-  get "users/:id", to: "users#show", as: :user
-  get "books", to: "books#index"
+  devise_for :users, path: '', path_names: {
+    sign_in: 'login',
+    sign_out: 'logout',
+    registration: 'signup'
+  },
+  controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
+
+  patch "/current_user", to: "current_user#update"
+  get "/users", to: "current_user#show"
+  
+  get "/books", to: "books#index"
   get "books/:id", to: "books#show", as: :book
-
-  post "users", to: "users#create"
   post "books", to: "books#create"
-
-  patch "users/:id", to: "users#update"
   patch "books/:id", to: "books#update"
-
-  delete "users/:id", to: "users#destroy"
   delete "books/:id", to: "books#destroy"
+  
 end
