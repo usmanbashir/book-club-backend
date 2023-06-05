@@ -22,5 +22,13 @@ Book.create(title: 'Heaven', author: 'Mieko Kawakami', genre: 'Coming of Age', p
 Book.create(title: 'My Brilliant Friend', author: 'Elena Ferrante', genre: 'Novel', publishedOn: '2011-01-01', current: false, meeting_date: '2023-02-22', meeting_location: 'Leicester', user_id: user_five.id)
 Book.create(title: 'The Lying Life of Adults', author: 'Elena Ferrante', genre: 'Domestic Fiction', publishedOn: '2019-01-01', current: false, meeting_date: '2022-11-05', meeting_location: 'Sheffield', user_id: user_six.id)
 
-
+Review.create(title: "Lovely", description: "Nice characters", rating: "4", user_id: 2, book_id: 1)
+Review.create(title: "Emotional", description: "Excellent story", rating: "5", user_id: 4, book_id: 3)
+Review.create(title: "Not my thing", description: "See title", rating: 2, user_id: 6, book_id: 2)
+Review.create(title: "Nice", description: "Easy read", rating: "3", user_id: 6, book_id: 1)
+Review.create(title: "Good", description: "Written well", rating: "4", user_id: 5, book_id: 6)
+Review.create(title: "Excellent", description: "Will recommend", rating: "4", user_id: 5, book_id: 5)
+Review.create(title: "Fun", description: "Nice to try something different", rating: "3", user_id: 4, book_id: 4)
+Review.create(title: "Funky", description: "My first sci-fi!!", rating: "3", user_id: 7, book_id: 4)
+Review.create(title: "Ok", description: "Easy read", rating: "3", user_id: 3, book_id: 2)
 
