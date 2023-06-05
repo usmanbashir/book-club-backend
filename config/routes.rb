@@ -30,5 +30,5 @@ Rails.application.routes.draw do
   get "/reviews", to: "reviews#index"
   get "reviews/:id", to: "reviews#show"
   post "reviews", to: "reviews#create"
-  delete "books/:id", to: "reviews#destroy"
+  delete "reviews/:id", to: "reviews#destroy"
 end

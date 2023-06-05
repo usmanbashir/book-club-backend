@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
 
     def create 
         @review = Review.create(params.require(:review).permit(
-            :title, :description, :user_id))
+            :title, :description, :rating, :user_id, :book_id))
 
         render json: @reviews
     end
