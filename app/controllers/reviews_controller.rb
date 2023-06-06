@@ -10,7 +10,6 @@ class ReviewsController < ApplicationController
 
     def show 
         @book = Book.find(params[:id])
-        # @reviews = Book.find(params(:id)).reviews
         @reviews = @book.reviews
 
         render json: @reviews

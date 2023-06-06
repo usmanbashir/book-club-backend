@@ -20,15 +20,17 @@ Rails.application.routes.draw do
 
   patch "/current_user", to: "current_user#update"
   get "/users", to: "current_user#show"
+ 
+    get "/books/reviews", to: "reviews#index"
+  get "/books/:id/reviews", to: "reviews#show"
+  post "/books/:id/reviews", to: "reviews#create"
+  delete "/books/:id/reviews/:id", to: "reviews#destroy"
   
   get "/books", to: "books#index"
   get "books/:id", to: "books#show", as: :book
-  post "books", to: "books#create"
-  patch "books/:id", to: "books#update"
-  delete "books/:id", to: "books#destroy"
+  post "/books", to: "books#create"
+  patch "/books/:id", to: "books#update"
+  delete "/books/:id", to: "books#destroy"
   
-  get "/books/reviews", to: "reviews#index"
-  get "books/:id/reviews", to: "reviews#show"
-  post "books/:id/reviews", to: "reviews#create"
-  delete "books/:id/reviews/:id", to: "reviews#destroy"
+
 end

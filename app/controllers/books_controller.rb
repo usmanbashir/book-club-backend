@@ -22,7 +22,9 @@ class BooksController < ApplicationController
 
     def create
 
-        @book = Book.create(params.require(:book).permit(:title, :author, :genre, :publishedOn, :current, :meeting_date, :meeting_location, :user_id))
+        @book = Book.create(params.require(:book).permit(
+            :title, :author, :genre, :publishedOn, :meeting_date, 
+            :meeting_location, :user_id))
 
         render json: @book
     end
