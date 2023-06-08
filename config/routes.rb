@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   }
 
   patch "/current_user", to: "current_user#update"
-  get "/users", to: "current_user#show"
+  get "/users/:id", to: "current_user#show"
  
     get "/books/reviews", to: "reviews#index"
   get "/books/:id/reviews", to: "reviews#show"
