@@ -8,7 +8,7 @@ class CreateBooks < ActiveRecord::Migration[7.0]
       t.boolean :current
       t.date :meeting_date
       t.string :meeting_location
-      t.references :user, null: false, foreign_key: true
+      # t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

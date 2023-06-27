@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_04_205509) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_19_135329) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "author"
@@ -19,9 +22,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_04_205509) do
     t.boolean "current"
     t.date "meeting_date"
     t.string "meeting_location"
-    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 
@@ -29,8 +32,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_04_205509) do
     t.string "title"
     t.string "description"
     t.integer "rating"
-    t.integer "user_id", null: false
-    t.integer "book_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "book_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_reviews_on_book_id"
