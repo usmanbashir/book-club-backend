@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "current_user#index"
+
   
   get '/current_user', to: 'current_user#index'
-
+  root "current_user#index"
+  
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
     sign_out: 'logout',
