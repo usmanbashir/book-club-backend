@@ -7,11 +7,13 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "https://hello-readers.netlify.app/"
+    # origins "https://hello-readers.netlify.app/"
+    # origins "https://localhost:3000/"
+    origins "*"
 
     resource "*",
       headers: :any,
       expose: ['access-token', 'expiry', 'token-type', 'Authorization'],
-      methods: [:get, :post, :put, :patch, :delete]
+      methods: [:get, :post, :put, :patch, :delete, :options]
   end
 end
