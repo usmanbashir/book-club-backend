@@ -8,7 +8,7 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     if Rails.env.production?
-      origins  '*' 
+      origins  'https://hello-readers.netlify.app/' 
     else
       origins 'http://localhost:4000'
     end

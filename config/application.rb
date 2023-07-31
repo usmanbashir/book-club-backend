@@ -13,11 +13,11 @@ module BookClub
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins '*'
+        origins 'https://hello-readers.netlify.app/'
         resource '*', headers: :any, methods: [:get, :post, :options, :delete, :put, :patch], credentials: true
       end
     end
-    
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
